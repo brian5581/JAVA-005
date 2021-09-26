@@ -1,0 +1,23 @@
+
+## 分库分表
+
+create schema demo_ds_0;
+create schema demo_ds_1;
+
+
+
+
+#create table 
+CREATE TABLE IF NOT EXISTS demo_ds_0.t_order_0 (order_id BIGINT NOT NULL AUTO_INCREMENT, user_id INT NOT NULL, status VARCHAR(50), PRIMARY KEY (order_id));
+
+
+# insert table
+ insert into t_order(user_id,status) values(1,'OK'),(1,'FAIL'),(2,'OK'),(2,'FAIL'),(3,'OK'),(3,'FAIL'),(4,'OK'),(4,'FAIL'),(5,'OK'),(5,'FAIL'),(6,'OK'),(6,'FAIL'),(7,'OK'),(7,'FAIL'),(8,'OK'),(8,'FAIL'),(9,'OK'),(9,'FAIL'),(10,'OK'),(10,'FAIL'),(11,'OK'),(11,'FAIL'),(12,'OK'),(12,'FAIL'),(13,'OK'),(13,'FAIL'),(14,'OK'),(14,'FAIL'),(15,'OK'),(15,'FAIL');
+
+# update table
+update  t_order set status='OK' where order_id=649030942220333069;
+
+# select data
+select * from t_order where id=2;
+
+# delete data
